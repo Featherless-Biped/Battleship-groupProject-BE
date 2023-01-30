@@ -5,10 +5,10 @@ import User from "../models/User.js";
 export const postNewScore = async (req, res) => {
   try {
     const { userId} = req.body;
-    const user = await User.findById(userId);
+    // const user = await User.findById(userId);
     const newScore = new Score({
       userId,
-      score: user.scores.pop(),
+      score,
     });
     await newScore.save();
 

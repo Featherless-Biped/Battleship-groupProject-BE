@@ -9,4 +9,6 @@ router.get("/:id", verifyToken, getAllScores);
 router.get("/:id/friends", verifyToken, getUserScores);
 
 /* Create */
-router.get("/:id", verifyToken, postNewScore);
+router.post("/",  postNewScore);
+
+export default router;
