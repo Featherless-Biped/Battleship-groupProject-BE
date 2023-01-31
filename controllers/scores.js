@@ -11,7 +11,7 @@ export const postNewScore = async (req, res) => {
       score: score,
     });
     await newScore.save();
-    const addedScore = await Score.find();
+    const addedScore = await Score.find().sort({"score": -1});
     
     res.status(201).json(addedScore);
   } catch (err) {
