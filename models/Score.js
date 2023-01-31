@@ -1,11 +1,8 @@
 import mongoose from "mongoose";
 
 const ScoreSchema = new mongoose.Schema(
-    {ranking: {
-        type: Number,
-        default: 1,
-        required: true,
-      },
+    {
+      
         userId: {
             type: String,
             required: true,

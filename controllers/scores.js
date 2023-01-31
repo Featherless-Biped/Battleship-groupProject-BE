@@ -4,16 +4,16 @@ import User from "../models/User.js";
 /* CREATE */
 export const postNewScore = async (req, res) => {
   try {
-    const { userId} = req.body;
-    // const user = await User.findById(userId);
+    const { userId, score,} = req.body;
+    console.log("userId", userId)
     const newScore = new Score({
-      userId,
-      score,
+      userId: userId,
+      score: score,
     });
     await newScore.save();
-
-    const score = await Score.find();
-    res.status(201).json(score);
+    const addedScore = await Score.find().sort({"score": -1});
+    
+    res.status(201).json(addedScore);
   } catch (err) {
     res.status(409).json({ message: err.message });
   }
