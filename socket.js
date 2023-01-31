@@ -52,7 +52,6 @@ export default class WS {
   }
 
   onConnection(socket) {
-    console.log(`new connection. Id = "${socket.id}"`);
     const roomNum = this.findAvailableRoom();
     this.joinRoom(roomNum, socket);
   }
@@ -78,7 +77,6 @@ export default class WS {
       socket.to(roomNum).emit("deployment");
       this.gameState[room[0] + room[1]] = "deployment0";
     }
-    console.log("rooms", this.rooms);
   }
 
   getRoomNum(id) {
