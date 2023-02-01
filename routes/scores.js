@@ -5,7 +5,7 @@ import { verifyToken } from "../middleware/auth.js";
 const router = express.Router();
 
 /* READ */
-router.get("/", verifyToken, getAllScores);
+router.get("/", getAllScores);
 
 /* Create */
 router.post("/",  postNewScore);
